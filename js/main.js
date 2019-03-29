@@ -45,7 +45,29 @@ $('img').click(function () {
     $(this).toggleClass('special')
 })
 
+/* AJAX */
+
+$('#content').load('./about.html')
+$('#contentNav .nav-link').click(function (e) {
+  e.preventDefault()
+var page = $(this).attr('href')
+$('#contentNav .active').removeClass('active')
+$(this).addClass('active')
+// $('.active').addClass('active')
+
+// $('#content').load(page)
+
+$('#content').fadeOut(500, function () {
+  $('#content').load(page)
+}).fadeIn(500)
+
 })
+
+
+
+})
+
+
 
 
 
