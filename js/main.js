@@ -45,7 +45,7 @@ $('img').click(function () {
     $(this).toggleClass('special')
 })
 
-
+})
 
 
 
