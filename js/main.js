@@ -63,18 +63,18 @@ $('#content').fadeOut(500, function () {
 
 })
 $.ajax({
-  url: './data/posts.json',
+  url: 'http://jsonplaceholder.typicode.com/posts',
   type: 'GET',
   dataType: 'json'
 }).done(function (data){
 // console.log(data)
 
-var numPosts = data.posts.length
-for(var i = 0; i < numPosts; i++){
+var numPosts = data.length
+for (var i = 0; i < numPosts; i++) {
 var post = '<div class="col-sm-6 p-5"><h3>'
-  post += (i+1) + '. ' + data.posts[i].title
+  post += (i+1) + '. ' + data[i].title
   post += '</h3><p>'
-  post += data.posts[i].body
+  post += data[i].body
   post += '</p></div>'
   $('#posts').append(post)
 })
